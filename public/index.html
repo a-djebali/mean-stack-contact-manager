@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Contact Manager - MEAN</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="build/css/bootstrap.min.css">
+    <!-- Bootstrap
+    <link rel="stylesheet" href="build/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="build/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    -->
+    <link rel="stylesheet" href="build/css/bootstrap-custom.min.css">
+
+
 
     <!--Custom Style-->
     <link rel="stylesheet" type="text/css" href="build/css/custom-style.css">
@@ -43,14 +47,42 @@
     <script type="text/javascript" src="build/js/angular.min.js"></script>
     <script type="text/javascript" src="controllers/controller.js"></script>
   </head>
-  <body ng-controller="contacCtrl"> 
+  <body ng-controller="contacCtrl">
     <header >
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Contact Manager App</h1>
-                <p>Mean Stack ... {{nb1+nb2}}</p>
-                <button type="button" class="btn btn-primary btn-lg">Learn More</button>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">ContMEAN</a>
             </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">HOME<span class="sr-only">(current)</span></a></li>
+              </ul>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Search" type="text">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Sign Up</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="jumbotron">
+          <div class="container">
+              <h1>Contact Manager</h1>
+              <p>Using MEAM, friendly and fun Javascript fullstack</p>
+          </div>
         </div>
     </header>
     <section>
@@ -63,6 +95,7 @@
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Action</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,27 +110,103 @@
                             <input type="text" ng-model="contact.phone" class="form-control" placeholder="998778521" required>
                             </td>
                             <td>
-                            <button type="button" class="btn btn-primary" ng-click="addContact()">Add Contact</button>
-                                <!--<<div class="row">
-                                    <div class="col-sm-4"><button type="button" class="btn btn-primary">Add</button></div>
-                                    div class="col-sm-3"><button type="button" class="btn btn-info">Update</button></div>
-                                    <div class="col-sm-3"><button type="button" class="btn btn-info">Clear</button></div>
-                                </div>-->
+                            <button type="button" class="btn btn-primary" ng-click="addContact()">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                            <button type="button" class="btn btn-info" ng-click="update()">
+                                <span class="glyphicon glyphicon-floppy-saved"></span>
+                            </button>
+                            <button type="button" class="btn btn-info" ng-click="clear()">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
                             </td>
                         </tr>
                         <tr ng-repeat="contact in contacts">
                             <td>{{contact.name}}</td>
                             <td>{{contact.email}}</td>
                             <td>{{contact.phone}}</td>
-                            <td><button type="button" class="btn btn-danger btn-block" ng-click="remove(contact._id)">Remove</button></td>
-                            <td><button type="button" class="btn btn-warning btn-block" ng-click="edit(contact._id)">Edit</button></td>
+                            <td>
+                                <button type="button" class="btn btn-danger" ng-click="remove(contact._id)">
+                                    <span class="glyphicon glyphicon-trash  "></span>
+                                </button>
+                                <button type="button" class="btn btn-warning" ng-click="edit(contact._id)">
+                                    <span class="glyphicon glyphicon-edit">
+                                </span></button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+        <hr>
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>MEAN stands for:</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="img/mongodb.png" alt="">
+                    <div class="caption">
+                        <p>MongoDB is the leading NoSQL database, empowering businesses to be more agile and scalable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="img/express.png" alt="">
+                    <div class="caption">
+                        <p>Express is a minimal and flexible node.js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="img/great words.png" alt="">
+                    <div class="caption">
+                        <p>AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="img/nodejs.png" alt="">
+                    <div class="caption">
+                        <p>Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </div>
     </section>
+    
     <footer>
+        <div class="jumbotron">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-unstyled">
+                      <li class="pull-right"><a href="#top">Back to top</a></li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="https://github.com/geektech893916">GitHub</a></li>
+                    </ul>
+                    <p>Made by <a href="#" rel="nofollow">Ahmed Djebali</a>. Contact him at <a href="mailto:a_djebali@geekstack.com">a_djebali@geekstack.com</a>.</p>
+                    <p>Code released under the <a href="#">MIT License</a>.</p>
+                    <p>Based on <a href="http://mean.io/" rel="nofollow">MEAN</a>. Styles from<a href="http://getbootstrap.com/" rel="nofollow">Bootstrap</a>. 
+                  </div>
+                </div>
+            </div>
+        </div>
     </footer>
   </body>
 </html>

@@ -1,0 +1,21 @@
+.form-control{
+width: 200px; 
+}
+header .jumbotron{
+  padding-bottom: 20px;
+  padding-top: 0px;
+  margin-bottom: 20px;
+}
+.navbar{
+  padding: 0px;
+  margin: 0px;
+}
+section .container{
+}
+.table-responsive, .thumbnail{
+  border: 0;
+}
+footer .jumbotron{
+  margin:0;
+  padding: 10px 0 0 0;
+}

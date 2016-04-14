@@ -36,7 +36,27 @@ app.controller('contacCtrl', function AppCtrl($scope, $http) {
     });
   };
 
-  $scope.edit = function (id) {
-     console.log(id);
+  $scope.edit = function(id) {
+    $http.get('/contacts/' + id).then(function(response) {
+      //success
+      $scope.contact = response.data;
+    }, function(error) {
+      //failed
+      console.log(error);
+    });
+  }
+
+  $scope.update = function() {
+    $http.put('/contacts/'+$scope.contact._id, $scope.contact).then(function(response) {
+      //success
+      refresh();
+    }, function(error) {
+      //failed
+      console.log(error);
+    });
+  };
+
+  $scope.clear = function () {
+    $scope.contact = "";
   }
 });

@@ -1,5 +1,5 @@
 # Demo
-<p>Soon</p>
+<p></p>
 <img src="demo/demo.png"/>
 #Install & Run 
 <p>Download the application</p>

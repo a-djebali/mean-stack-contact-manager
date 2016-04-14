@@ -1,6 +1,6 @@
 # Demo
 <p>Soon</p>
-<img src=""/>
+<img src="demo/demo.png"/>
 #Install & Run 
 <p>Download the application</p>
 <pre>

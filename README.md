@@ -1,6 +1,6 @@
 # Demo
 <p></p>
-<img src="demo/demo2.png"/>
+<img src="demo/demo.png"/>
 #Install & Run 
 <p>Download the application</p>
 <pre>

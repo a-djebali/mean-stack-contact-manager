@@ -1,6 +1,6 @@
 # Demo
 <p></p>
-<img src="http://g.recordit.co/hLlQ78Dj6e.gif"/>
+<img src="demo/demo.gif"/>
 #Install & Run 
 <p>Download the application</p>
 <pre>
